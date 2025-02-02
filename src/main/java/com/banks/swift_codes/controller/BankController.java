@@ -28,6 +28,7 @@ public class BankController {
 
     @GetMapping("/{swiftCode}")
     public ResponseEntity<SwiftCodeResponse> getBankBySwiftCode(@PathVariable String swiftCode) {
+        swiftCode = swiftCode.toUpperCase();
         Optional<Bank> bank = bankRepository.findById(swiftCode);
         if(bank.isEmpty()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
@@ -46,6 +47,7 @@ public class BankController {
 
     @GetMapping("/country/{iso2code}")
     public ResponseEntity<ISO2Response> getBankByISO2Code(@PathVariable String iso2code) {
+        iso2code = iso2code.toUpperCase();
         List<Bank> banks = bankRepository.findByCountryISO2(iso2code);
         if (banks.isEmpty()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
@@ -57,6 +59,7 @@ public class BankController {
 
     @DeleteMapping("/{swiftCode}")
     public ResponseEntity<Map<String, String>> deleteBank(@PathVariable String swiftCode) {
+        swiftCode = swiftCode.toUpperCase();
         Optional<Bank> bank = bankRepository.findById(swiftCode);
 
         if (bank.isPresent()) {
