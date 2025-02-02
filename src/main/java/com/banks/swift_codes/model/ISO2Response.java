@@ -15,6 +15,8 @@ public class ISO2Response {
     private List<SwiftCodeDTO> swiftCodes;
 
     @Data
+    @AllArgsConstructor
+    @NoArgsConstructor
     public static class SwiftCodeDTO {
         private String address;
         private String bankName;

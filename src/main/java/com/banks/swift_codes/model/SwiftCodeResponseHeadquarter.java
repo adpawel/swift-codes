@@ -15,6 +15,8 @@ public class SwiftCodeResponseHeadquarter extends SwiftCodeResponse {
     private List<BranchDTO> branches;
 
     @Data
+    @AllArgsConstructor
+    @NoArgsConstructor
     public static class BranchDTO {
         private String address;
         private String bankName;
