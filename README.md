@@ -30,7 +30,7 @@ docker pull ghcr.io/adpawel/swift-codes:latest
 ### **3. Run the Application with a Database**
 
 The swift-codes application requires a PostgreSQL database. To start both the application and the database, use Docker Compose.
-Option 1: Using docker-compose.yml (Recommended)
+#### Option 1: Using docker-compose.yml (Recommended)
 
 If you have the docker-compose.yml file, simply run:
 
@@ -41,17 +41,11 @@ This command will:
 Start a PostgreSQL database container (db service).
 Start the swift-codes application (app service) and link it to the database.
 
-Option 2: Manually Running PostgreSQL and the Application
+#### Option 2: Manually Running PostgreSQL and the Application
 
 If you don’t have docker-compose.yml, you can start PostgreSQL manually:
 
-docker run -d \
-  --name swift-db \
-  -e POSTGRES_USER=user \
-  -e POSTGRES_PASSWORD=password \
-  -e POSTGRES_DB=swiftcodes \
-  -p 5432:5432 \
-  postgres:15
+docker run -d --name swift-db -e POSTGRES_USER=user -e POSTGRES_PASSWORD=password -e POSTGRES_DB=swiftcodes -p 5432:5432 postgres:15
 
 Then, run the application while passing the database connection details:
 
