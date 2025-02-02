@@ -38,8 +38,8 @@ docker-compose up -d
 
 This command will:
 
-    Start a PostgreSQL database container (db service).
-    Start the swift-codes application (app service) and link it to the database.
+Start a PostgreSQL database container (db service).
+Start the swift-codes application (app service) and link it to the database.
 
 Option 2: Manually Running PostgreSQL and the Application
 
